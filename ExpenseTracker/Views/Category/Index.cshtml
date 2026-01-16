@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ExpenseTracker.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <ejs-grid id="categories" dataSource="@Model">
+            <e-grid-columns>
+                <e-grid-column field="CategoryId" headerText="ID" textAlign="Right" width="50"></e-grid-column>
+                <e-grid-column field="Title" headerText="Title" width="150"></e-grid-column>
+                <e-grid-column field="Type" headerText="Type" width="100"></e-grid-column>
+				<e-grid-column field="Icon" headerText="Icon" width="100"></e-grid-column>
+            </e-grid-columns>
+        </ejs-grid>
+
+    </div>
+    <div class="col-md-5">
+        <div class="widget h-100 d-flex justify-content-center align-items-center" style="background-color:#212b36">
+            <i class="fa-solid fa-shapes fa-2xl "></i>
+        </div>
+    </div>
+
+</div>
