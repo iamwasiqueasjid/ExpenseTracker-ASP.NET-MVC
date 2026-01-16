@@ -18,6 +18,11 @@ html {
   font-family: "Inter"
 }
 
+.e-breadcrumb a, .e-breadcrumb a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 *:not(.fa-solid):not(.fa):not(.e-icons) {
     font-family: "Inter"
 }
@@ -31,7 +36,19 @@ body {
 .e-bigger {
     font-size: x-large;
 }
+/*Button*/
 
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+/*Hyperlink*/
+.no-a-decoration, .no-a-decoration:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Grid*/
 .e-grid {
     border: 0;
     border-radius: 5px;
