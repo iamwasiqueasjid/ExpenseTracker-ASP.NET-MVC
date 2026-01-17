@@ -86,7 +86,10 @@ namespace ExpenseTracker.Controllers
                                           income = income == null ? 0 : income.income,
                                           expense = expense == null ? 0 : expense.expense
                                       };
-
+            ViewBag.RecentTransactions = await _context.Transactions.Include(x => x.Category)
+                .OrderByDescending(y => y.Date)
+                .Take(5)
+                .ToListAsync();
 
             return View();
         }
