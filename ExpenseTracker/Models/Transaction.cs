@@ -15,5 +15,27 @@ namespace ExpenseTracker.Models
         public string? Note { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
 
+        [NotMapped]
+        public string? CategoryTitleWithIcon
+        {
+            get
+            {
+                if (Category != null)
+                {
+                    return $"{Category.Icon} {Category.Title}";
+                }
+                return "";
+            }
+        }
+
+        [NotMapped]
+        public string? FormattedAmount
+        {
+            get
+            {
+                return ((Category==null || Category.Type=="Expense")? "- ":"+ ")+ Amount.ToString("C0", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+            }
+        }
+
     }
 }
