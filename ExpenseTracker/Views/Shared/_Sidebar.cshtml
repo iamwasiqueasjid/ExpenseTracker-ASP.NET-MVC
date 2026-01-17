@@ -47,13 +47,14 @@
 }
 
 
-<ejs-sidebar id="sidebar" width="290px" enableDock>
+<ejs-sidebar id="sidebar" width="290px" enableDock dockSize="100px" target=".dock-target" enableGestures="false">
     <e-content-template>
         <div class="logo-wrapper">
             <div class="app-logo">
                 <img src="~/logo.png"/>
             </div>
-            <i class="fa-solid fa-angles-left"></i>
+            <div class="w-100"></div>
+            <i id="sidebar-toggler" class="fa-solid fa-angles-left"></i>
 
         </div>
         <div class="profile-wrapper">
@@ -68,3 +69,12 @@
         </ejs-menu>
     </e-content-template>
 </ejs-sidebar>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+		dockBar = document.getElementById('sidebar').ej2_instances[0];
+        document.getElementById('sidebar-toggler').onclick = function(){
+			dockBar.toggle();
+        };
+    });
+</script>
